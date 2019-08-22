@@ -15,8 +15,42 @@ export class VisualizacaoService {
   readonly urlSetor = 'http://localhost:8090/api/setores';
 
   private listaDeSolitacaoSubject$: BehaviorSubject<Solicitacao[]> = new BehaviorSubject<Solicitacao[]>(null);
+  carregado: boolean = false;
 
   constructor(private http: HttpClient) { }
+
+
+
+  get():Observable<Solicitacao[]>{
+    return this.http.get<Solicitacao[]>(this.urlSolicitacao)
+  }
+
+
+
+  getSolicitacoesPendentes():Observable<Solicitacao[]>{
+   
+    console.log(this.carregado)
+
+    if (!this.carregado){
+        this.http.get<Solicitacao[]>(`${this.urlSolicitacao}/status/${0}`)
+        .subscribe(this.listaDeSolitacaoSubject$)
+        this.carregado = true;
+    }
+    
+
+    return this.listaDeSolitacaoSubject$.asObservable();
+  }
+
+
+  postFiltro(filtro:Filtros, dataInicio:Date, dataFinal:Date):Observable<Solicitacao[]>{
+    return this.http.post<Solicitacao[]>(this.urlSolicitacao,filtro).pipe(
+      tap(
+        (sol) => {
+          console.log(sol)        
+        }
+      )
+    )
+  }
 
 
 

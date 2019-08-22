@@ -23,3 +23,18 @@
 .mt26{
     margin-top: 26px;
 }
+
+.status-pendente{
+    color:#15c6c7;
+    font-weight: 600;
+}
+
+.status-aprovado{
+    color: green;
+    font-weight: 600;
+}
+
+.status-reprovado{
+    color: red;
+    font-weight: 600;
+}

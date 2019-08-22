@@ -76,8 +76,8 @@
                         <td>{{sol.empregado}}</td>
 
                         <td>
-                            <div class="status">
-                                {{sol.status}}
+                            <div [ngClass]="validaStatus(sol.status)">
+                                {{statusLabel}}
                             </div>
                         </td>
 
