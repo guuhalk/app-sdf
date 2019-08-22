@@ -1,0 +1,16 @@
+.logo-card{
+    width: 55%;
+}
+
+.tac{
+    text-align: center;
+}
+
+.m5{
+    display: flex;
+    margin-top: 3%;
+}
+
+.mr3{
+    margin-right: 3%
+}

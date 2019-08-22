@@ -1,0 +1,75 @@
+<div class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+        <h2>Aprovação</h2>
+    </div>
+
+    <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid" *ngFor="let sol of listaSolicitacaoPendentes">
+        <p-card>
+            <div class="ui-g-12 ui-md-3 ui-lg-2 ui-fluid tac">
+                <img src="Card" src="assets/images/solicitacao.png" class="logo-card">
+            </div>
+
+            <div class="ui-g-12 ui-md-6 ui-lg-8 ui-fluid">
+
+                <!-- BODY 1 -->
+                <div class="ui-g-12 ui-md-4 ui-lg-4 ui-fluid ml10">
+                    <div>
+                        <label><b>Nome:</b></label>
+                        <span>{{sol.empregado}}</span>
+                    </div>
+
+                    <div>
+                        <label><b>Setor:</b></label>
+                        <span>{{sol.setor}}</span>
+                    </div>
+
+                    <div>
+                        <label><b>Quant.Dias:</b></label>
+                        <span>{{sol.quantDias}}</span>
+                    </div>
+
+
+                    <div>
+                        <label><b>Data:</b></label>
+                        <span>{{sol.data}}</span>
+                    </div>
+                </div>
+
+                <!-- BODY 2 -->
+                <div class="ui-g-12 ui-md-8 ui-lg-8 ui-fluid ml4">
+                    <div>
+                        <label><b>Pagar Abono Pecuniario:</b></label>
+                        <span>{{sol.pagarAbono}}</span>
+                    </div>
+
+                    <div>
+                        <label><b>Tipo Abono:</b></label>
+                        <span>{{sol.tipoAbono}}</span>
+                    </div>
+
+                    <div>
+                        <label><b>Adiantar 1ª parc 13º:</b></label>
+                        <span>{{sol.primeiraParcelaDecimoTerceiro}}</span>
+                    </div>
+
+                    <div>
+                        <label><b>Observação:</b></label>
+                        <span>{{sol.observacao}}</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-3 ui-lg-2 ui-fluid m5">
+
+                <button pButton type="button" label="Aprovar"  (click)="aprovar(sol)" class="ui-button-raised ui-button-success mr3"></button>
+                <button pButton type="button" label="Reprovar" (click)="reprovar(sol)" class="ui-button-raised ui-button-danger"></button>
+
+            </div>
+            <p-footer>
+                <h1 style="color: white">...</h1>
+            </p-footer>
+        </p-card>
+    </div>
+</div>

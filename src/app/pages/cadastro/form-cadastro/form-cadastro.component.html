@@ -1,0 +1,120 @@
+<div class="ui-g">
+
+    <div class="ui-g-11 ui-fluid">
+        <h2>Cadastro</h2>
+    </div>
+
+
+
+    <div class="ui-g-12 ui-md-8 ui-lg-8 ui-fluid">
+        <form #formCadastro="ngForm" (ngSubmit)="onSubmit(solicitacao)">
+
+            <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+                <div class="ui-g-12 ui-md-6 ui-lg-6 ui-fluid">
+                    <label>Empregado: </label>
+                    <input pInputText name="empregado" required [(ngModel)]="solicitacao.empregado"/>
+                </div>
+
+                <div class="ui-g-12 ui-md-4 ui-lg-4 ui-fluid">
+                    <label>Setor: </label>
+                    <p-dropdown #setor="ngModel" required name="setor" [options]="listaSetor" 
+                        [(ngModel)]="solicitacao.setor" placeholder="Selecione" [autoWidth]="false"></p-dropdown>
+                </div>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+
+                <div class="ui-g-12 ui-md-6 ui-lg-6 ui-fluid">
+                    <label>Data Inicio: </label>
+                    <p-calendar required [showIcon]="true" name="dataSelecionada" [(ngModel)]="dataSelecionada"></p-calendar>
+                </div>
+
+                <div class="ui-g-12 ui-md-4 ui-lg-4 ui-fluid">
+                    <label>Quant.Dias: </label>
+                    <input required pInputText type="number" name="quantDias" [(ngModel)]="solicitacao.quantDias" />
+                </div>
+
+            </div>
+
+
+            <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid ">
+
+                <div class="ui-g-12 ui-md-4 ui-lg-4 ui-fluid">
+                    <div class="ui-g-12 ui-fluid">
+                        <label>Adiantar 1ª Parc 13 :</label>
+                    </div><br>
+
+                    <div class="ui-g-3 ui-md-5 ui-lg-5 ui-fluid">
+                        <p-radioButton  name="gp2" value="Sim" label="Sim" [(ngModel)]="solicitacao.primeiraParcelaDecimoTerceiro"> 
+                        </p-radioButton>
+                    </div>
+
+                    <div class="ui-g-4 ui-md-4 ui-lg-4 ui-fluid">
+                        <p-radioButton name="gp2" value="Nao" label="Não" [(ngModel)]="solicitacao.primeiraParcelaDecimoTerceiro">
+                        </p-radioButton>
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-6 ui-lg-6 ui-fluid  ">
+                    <label>Observação: </label>
+                    <textarea  rows="3" cols="30" pInputTextarea autoResize="autoResize" name="obs" [(ngModel)]="solicitacao.observacao">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid ">
+
+                <div class="ui-g-12 ui-md-4 ui-lg-4 ui-fluid">
+
+                    <div class="ui-g-12 ui-fluid">
+                        <label>Abono Pecuniario:</label>
+                    </div><br>
+
+                    <div class="ui-g-3 ui-md-5 ui-lg-5 ui-fluid">
+                        <p-radioButton name="gp1" value="Sim" label="Sim" [(ngModel)]="solicitacao.pagarAbono" (click)="validaAbono()" >
+                        </p-radioButton>
+                    </div>
+
+                    <div class="ui-g-4 ui-md-5 ui-lg-5 ui-fluid">
+                        <p-radioButton name="gp1" value="Nao" label="Não" [(ngModel)]="solicitacao.pagarAbono" (click)="validaAbono()" >
+                        </p-radioButton>
+                    </div>
+
+                </div>
+
+                <div class="ui-g-12 ui-md-6 ui-lg-6 ui-fluid" *ngIf="campoAbono">
+                    <label>Tipo Abono: </label>
+                    <p-dropdown #tpAbono="ngModel" name="tipoAbono" [options]="listaTipoAbono" 
+                        [(ngModel)]="solicitacao.tipoAbono" placeholder="Selecione" [autoWidth]="false"></p-dropdown>
+                </div>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-2 ui-lg-2 ui-fluid df mt26">
+                <button pButton type="button" icon="pi pi-trash" label="Limpar" (click)="limparCampos(formCadastro)"
+                    class="ui-button-raised ui-button-danger "></button>
+               
+                <button pButton type="submit" icon="pi pi-save" label="Cadastrar"
+                    [disabled]="!formCadastro.form.valid" class="ui-button-raised ui-button-primary ml5"></button>
+
+                    <button pButton icon="pi pi-search" label="Pesquisar"class="ui-button-raised ui-button-secondary ml5"
+                    (click)="redirectVisualizacao()"></button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="ui-g-12 ui-md-4 ui-lg-4">
+        
+    
+
+    </div>
+
+
+
+
+</div>

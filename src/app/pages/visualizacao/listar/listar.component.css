@@ -1,0 +1,25 @@
+.status{
+    font-weight: 600;
+    color: red;
+    
+}
+
+.column-status{
+    width: 13%;
+}
+
+.column-data{
+    width: 8%;
+}
+
+.ml5{
+    margin-left: 5%;
+}
+
+.df{
+    display: flex;
+}
+
+.mt26{
+    margin-top: 26px;
+}
