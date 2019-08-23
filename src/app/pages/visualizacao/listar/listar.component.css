@@ -24,6 +24,10 @@
     margin-top: 26px;
 }
 
+.mt1{
+    margin-top: 1%;
+}
+
 .status-pendente{
     color:#15c6c7;
     font-weight: 600;

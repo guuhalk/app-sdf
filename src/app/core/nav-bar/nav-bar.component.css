@@ -32,4 +32,45 @@ span{
     color: #1e94d2;
 }
 
+.color-bar {
+    background-color: #3a3633 !important;
+}
 
+.div-menu:hover{
+    background: #ffffff98;
+    color: white;
+    
+
+}
+
+.div-menu{
+    color: white;
+    
+}
+
+#divClick{
+    cursor: pointer;
+    padding-top: 3%;
+    padding-bottom: 8%;
+    padding-left: 4%;
+    margin-left: 5%; 
+    margin-right: 5%;
+}
+
+.botao-menu{
+    float: left;
+    font-size: 120%
+}
+
+
+h1{
+    color: white;
+    margin-bottom: 15%
+}
+
+.icon-menu{
+    color: white;
+    font-size: 135%;
+    float: right;
+    margin-right: 10%;
+}

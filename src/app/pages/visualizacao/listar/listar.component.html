@@ -1,11 +1,19 @@
 <div class="ui-g">
 
-    <div class="ui-g-12 ui-fluid">
+    <div class="ui-g-3 ui-fluid">
         <h2>Filtros:</h2>
     </div>
 
+    <div class="ui-g-12 ui-md-2 ui-lg-1 ui-fluid mt1">
+        <button pButton icon="pi pi-plus" label="Novo" (click)="redirectCadastro()" class="ui-button-raised ui-button-success "></button>
+    </div>
+
+    <div class="ui-g-8 ui-fluid">
+   
+    </div>
+
     <div class="ui-g-12 ui-fluid">
-        <form #formFiltro="ngForm" (ngSubmit)="onSubmit()">
+        <form #formFiltro="ngForm" (ngSubmit)="onSubmit(filtro)">
             <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
                 <div class="ui-g-12 ui-md-2 ui-lg-2 ui-fluid">
                     <label>Empregado: </label>
@@ -34,7 +42,8 @@
             <div class="ui-g-12 ui-md-2 ui-lg-2 ui-fluid ">
                 <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
                     <label>Setor: </label>
-                    <input pInputText />
+                    <p-dropdown #setor="ngModel" required name="setor" [options]="listaSetor"
+                        [(ngModel)]="filtro.setor" placeholder="Selecione" [autoWidth]="false"></p-dropdown>
                 </div>
             </div>
 
@@ -90,7 +99,7 @@
                         <td>{{sol.observacao}}</td>
                         <td style="display: flex">
 
-                            <button pButton type="button" label="Editar" (click)="aprovar(sol)"
+                            <button pButton type="button" label="Editar" (click)="editar(sol)"
                                 class="ui-button-raised ui-button-primary"></button>
                             <button pButton type="button" label="Deletar" (click)="reprovar(sol)"
                                 style="margin-left: 5%;" class="ui-button-raised ui-button-danger"></button>

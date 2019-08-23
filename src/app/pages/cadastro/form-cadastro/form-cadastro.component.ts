@@ -16,6 +16,7 @@ export class FormCadastroComponent implements OnInit {
   listaSetor = [];
   campoAbono:boolean = false;
   dataSelecionada:Date;
+  parametrosEdicao:boolean = false;
   
   listaTipoAbono = [
     {label:"10 Primeiros",value:"10 Primeiros"},
@@ -37,18 +38,16 @@ export class FormCadastroComponent implements OnInit {
       (erro)=> console.log(erro) 
     )
 
-    /*
-    
-    ULTILIZANDO PROMISSE
+    this.service.solicitacaoParaEditar.subscribe(
+      (sol: Solicitacao)=>{
+        this.solicitacao = sol;
+        console.log(this.solicitacao)
 
-    return this.service.getSetor()
-    .then(setor => {
-      this.listaSetor = setor.map(c => ({ label: c.descricao, value: c.codSetor }));
-      console.log(this.listaSetor)
-    })
-    
-    */
-    
+      },
+      (erro)=>console.log(erro)
+        
+      
+    )
 
   }
  
@@ -80,5 +79,17 @@ export class FormCadastroComponent implements OnInit {
   redirectVisualizacao(){
     this.rota.navigateByUrl('/visualizacao')
   }
+
+
+  editaSolicitacao(edita:boolean, sol:Solicitacao){
+    if(edita){
+      this.solicitacao = sol;
+    }  
+  }
+  
+
+
+
+
 
 }

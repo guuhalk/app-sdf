@@ -1,6 +1,6 @@
 <div class="ui-g">
 
-    <div class="ui-g-4">
+    <div class="ui-g-12 ui-md-4 ui-md-4 ">
         <p-card header="Solicitar" subheader="Fazer solicitação de ferias" [style]="{width: '360px'}"
             styleClass="ui-card-shadow">
             <p-header>
@@ -9,66 +9,60 @@
                 </div>
 
                 <button pButton type="button" label="ir" class="ui-button-raised ui-button-info button-card"
-                    icon="pi pi-arrow-circle-right" (click)="redirectCadastro()" ></button>
+                    icon="pi pi-arrow-circle-right" (click)="redirectCadastro()"></button>
             </p-header>
 
         </p-card>
 
     </div>
 
-    <div class="ui-g-4">
-            <p-card header="Relatorio" subheader="Relatorio de solicitações" [style]="{width: '360px'}"
-                styleClass="ui-card-shadow">
-                <p-header>
-                    <div class="ui-g-12">
-                        <img src="Card" src="assets/images/relatorio.png" class="logo-card">
-                    </div>
-    
-                    <button pButton type="button" label="ir" class="ui-button-raised ui-button-info button-card"
-                        icon="pi pi-arrow-circle-right" (click)="redirectRelatorio()" ></button>
-                </p-header>
-    
-            </p-card>
-    
-        </div>
+    <div class="ui-g-12 ui-md-4 ui-md-4">
+        <p-card header="Relatorio" subheader="Relatorio de solicitações" [style]="{width: '360px'}"
+            styleClass="ui-card-shadow">
+            <p-header>
+                <div class="ui-g-12">
+                    <img src="Card" src="assets/images/relatorio.png" class="logo-card">
+                </div>
 
-        <div class="ui-g-4">
-                <p-card header="Visualizar" subheader="Vizualizar solicitação de ferias" [style]="{width: '360px'}"
-                    styleClass="ui-card-shadow">
-                    <p-header>
-                        <div class="ui-g-12">
-                            <img src="Card" src="assets/images/visualizar.png" class="logo-card">
-                        </div>
-        
-                        <a pButton type="button" label="ir" class="ui-button-raised ui-button-info button-card"
-                            icon="pi pi-arrow-circle-right" (click)="redirectVisualizacao()"></a>
-                    </p-header>
-        
-                </p-card>
-        
-            </div>
-            <br>
-            <br>
+                <button pButton type="button" label="ir" class="ui-button-raised ui-button-info button-card"
+                    icon="pi pi-arrow-circle-right" (click)="redirectRelatorio()"></button>
+            </p-header>
 
-            <div class="ui-g-4 m5" >
-                <p-card header="Aprovação" subheader="Aprovar a solicitação de ferias" [style]="{width: '360px'}"
-                    styleClass="ui-card-shadow">
-                    <p-header>
-                        <div class="ui-g-12">
-                            <img src="Card" src="assets/images/aprovar.png" class="logo-card">
-                        </div>
-        
-                        <a pButton type="button" label="ir" class="ui-button-raised ui-button-info button-card"
-                            icon="pi pi-arrow-circle-right" (click)="redirectAprovacao()"></a>
-                    </p-header>
-        
-                </p-card>
-        
-            </div>
+        </p-card>
 
+    </div>
 
+    <div class="ui-g-12 ui-md-4 ui-md-4">
+        <p-card header="Visualizar" subheader="Vizualizar solicitação de ferias" [style]="{width: '360px'}"
+            styleClass="ui-card-shadow">
+            <p-header>
+                <div class="ui-g-12">
+                    <img src="Card" src="assets/images/visualizar.png" class="logo-card">
+                </div>
 
-            
+                <a pButton type="button" label="ir" class="ui-button-raised ui-button-info button-card"
+                    icon="pi pi-arrow-circle-right" (click)="redirectVisualizacao()"></a>
+            </p-header>
 
+        </p-card>
 
+    </div>
+    <br>
+    <br>
+
+    <div class="ui-g-12 ui-md-4 ui-md-4 ">
+        <p-card header="Aprovação" subheader="Aprovar a solicitação de ferias" [style]="{width: '360px'}"
+            styleClass="ui-card-shadow">
+            <p-header>
+                <div class="ui-g-12">
+                    <img src="Card" src="assets/images/aprovar.png" class="logo-card">
+                </div>
+
+                <a pButton type="button" label="ir" class="ui-button-raised ui-button-info button-card"
+                    icon="pi pi-arrow-circle-right" (click)="redirectAprovacao()"></a>
+            </p-header>
+
+        </p-card>
+
+    </div>
 </div>

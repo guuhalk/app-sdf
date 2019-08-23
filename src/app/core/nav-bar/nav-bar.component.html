@@ -1,15 +1,52 @@
 <div class="barra-navegacao ui-g">
 
     <div ui-g-2>
-        <a class="buttonMenu ui-g-10" type="button" (click)="display = true"><i class="pi pi-align-justify"></i></a>
+        <a href="javascript:;" class="buttonMenu ui-g-10" type="button" (click)="display = true"><i class="pi pi-align-justify"></i></a>
     </div>
-
 
     <div class="ui-g-10">
             <a type="button" href="#"><span>Solicitação de Ferias</span></a>
     </div>
 
     <p-sidebar [(visible)]="display" position="right" styleClass="ui-sidebar-md">
+        
+        <h1>Bem Vindo!</h1>
+
+        <div id="divClick" class="div-menu" (click)="redirectDashboard()">
+            <span class="botao-menu">Dashboard</span>
+            <i class="pi pi-play icon-menu"></i>
+        </div>
+        
+        <div id="divClick" class="div-menu" (click)="redirectAprovacao()">
+            <span class="botao-menu">Aprovar</span>
+            <i class="pi pi-play icon-menu"></i>
+        </div>
+
+        <div id="divClick" class="div-menu" (click)="redirectCadastro()">
+            <span class="botao-menu">Cadastrar</span>
+            <i class="pi pi-play icon-menu"></i>
+        </div>
+
+        <div id="divClick" class="div-menu" (click)="redirectRelatorio()">
+            <span class="botao-menu">Relatorio</span>
+            <i class="pi pi-play icon-menu"></i>
+        </div>
+
+        <div id="divClick" class="div-menu" (click)="redirectVisualizacao()">
+            <span class="botao-menu">Vizualização</span>
+            <i class="pi pi-play icon-menu"></i>
+        </div>
+
+        <div id="divClick" class="div-menu">
+            <span class="botao-menu">Logout</span>
+            <i class="pi pi-power-off icon-menu"></i>
+        </div>
+
+
+    
     </p-sidebar>
 
 </div>
+
+
+

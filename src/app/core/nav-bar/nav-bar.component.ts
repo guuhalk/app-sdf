@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,13 +8,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  menu = [
-    "Aprovar","Cadastrar", "Relatorio", "Visualizar"
-  ];
+  constructor( private router: Router) { }
 
-  constructor() { }
+  display:boolean;
 
   ngOnInit() {
   }
 
+
+  redirectVisualizacao(){
+    this.router.navigateByUrl('/visualizacao');
+    this.display=false;
+  }
+  
+  redirectRelatorio(){
+    this.router.navigateByUrl('/relatorio');
+    this.display=false;
+  }
+
+  redirectCadastro(){
+    this.router.navigateByUrl('/cadastro');
+    this.display=false;
+  }
+
+  redirectAprovacao(){
+    this.router.navigateByUrl('/aprovar');
+    this.display=false;
+  }
+
+  redirectDashboard(){
+    this.router.navigateByUrl('/dashboard');
+    this.display=false;
+  }
+
+
+
 }
+
+
+

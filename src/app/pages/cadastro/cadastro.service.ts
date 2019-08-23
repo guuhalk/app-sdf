@@ -31,6 +31,10 @@ export class CadastroService {
   }
 
 
+  emitirEdicao(sol:Solicitacao){
+    
+  }
+
 
 /*
 

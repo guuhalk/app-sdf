@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Solicitacao } from 'src/app/models/solicitacao';
-import { AprovacaoService } from '../../aprovacao/aprovacao.service';
 import { Filtros } from 'src/app/models/filtros';
-import { HttpClient } from '@angular/common/http';
 import { VisualizacaoService } from '../visualizacao.service';
-import { element } from 'protractor';
+import { Router } from '@angular/router';
+import { CadastroService } from '../../cadastro/cadastro.service';
+
+
 
 @Component({
   selector: 'app-listar',
@@ -21,6 +22,7 @@ export class ListarComponent implements OnInit {
   filtro = new Filtros;
   listaDeSolicitacoes:Solicitacao[];
   listaFormatada = [];
+  listaSetor = []
 
   listaDeStatus = [
    { label:'Pendente'  ,value:'0' },
@@ -28,36 +30,46 @@ export class ListarComponent implements OnInit {
    { label:'Reprovado' ,value:'2' }
   ]
 
-  constructor( private service: VisualizacaoService ) { }
+  constructor( 
+    private service: VisualizacaoService,
+    private rota:Router, 
+    private serviceEditar:CadastroService
+    
+    ){}
 
   ngOnInit() {
-
-
     
-    this.service.get().subscribe(
-      (solicitacao)=>this.listaDeSolicitacoes = solicitacao,
-      (error)=>console.error(error)      
+    this.service.getSetor().subscribe(
+      (setor)=>{ this.listaSetor = setor.map(c => ({ label: c.descricao, value: c.codSetor })),
+        console.log(this.listaSetor)
+      },
+      
+      (erro)=> console.log(erro) 
     )
 
-
+    
+    this.service.getSolicitacoesPendentes().subscribe(
+      (solicitacao)=>{ console.log(solicitacao)
+        this.listaDeSolicitacoes = solicitacao},
+      (error)=>console.error(error)
+    )
 
   }
 
   onSubmit(filtro:Filtros){
     console.log(filtro);
-
-    /*
-    this.service.postFiltro(filtro, this.dataInicio,this.dataFinal).subscribe(
-      (solicitacao)=>{
-        this.listaDeSolicitacoes = solicitacao,
-        console.log(solicitacao)
-      },
-      
-      (error)=>console.error(error)      
-    )*/
-
   }
 
+
+  editar(sol:Solicitacao){
+    this.serviceEditar.emitirEdicao(sol);
+    this.rota.navigateByUrl('/cadastro')
+  }
+
+
+  redirectCadastro(){
+    this.rota.navigateByUrl('/cadastro')
+  }
 
   validaStatus(status:number){
     
